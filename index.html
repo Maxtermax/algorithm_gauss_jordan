@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Gauss">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+  <script src="./lib/sweet-alert.min.js"></script>
+	<script src="./lib/angular.min.js"></script>
+	<script src="./scripts/array.js"></script>
+	<script src="./scripts/main.js"></script>
+  <link rel="stylesheet" href="./styles/sweet-alert.css">
+	<link rel="stylesheet" href="./styles/style.css">
+
+</head>
+<body>
+	<section id="section_tabla" ng-controller="input">	
+		<form class="formulario" name="t"  >
+			<div class="select">
+				<input type="submit" ng-disabled="t.$invalid" ng-click="Gauss()" class="play"  value="Calcular" >
+
+				<select name="dimencion" class="select-dimencion" ng-model="dimencion" ng-change="createMatriz(dimencion,dimencion )">
+					<option value="2">Dimencion 2,2</option>
+					<option value="3">Dimencion 3,3</option>
+					<option value="4">Dimencion 4,4</option>
+					<option value="5">Dimencion 5,5</option>
+					<option value="6">Dimencion 6,6</option>
+				</select>
+				<div class="main">Gauss Jordan</div>			
+			</div>	
+
+			<table class="board">		
+				<tr>
+					<td class="t"> </td>
+					<td class="colums" ng-repeat="rows in matriz track by $index"> {{$index}} </td>
+					<td class="res">=</td>
+				</tr>
+
+				<tr ng-repeat="rows in matriz track by $index">
+					<td class="rows-{{$index%2 == 0 && 'odd' || 'even' }}">
+						<span>{{$index}}</span>
+					</td>
+						
+					<td ng-repeat="item in rows track by $index" >
+						<input class="entrada" ng-focus="showPos($parent.$index,$index)" ng-mouseover="showPos($parent.$index,$index)" type="number" ng-class="algo" ng-change="actualizar($parent.$index,$index,item)" ng-model="item" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46 || event.charCode == 45 ' required title="{{$parent.$index+','+$index}}" placeholder="{{$parent.$index+','+$index}}">
+					</td>
+				</tr>
+				<tr>
+    			<td colspan="{{dimencion*2}}" class="showIndex">
+						<small>
+							Fila {{showX || '0'}} | Columna {{ showY || '0' }}
+						</small>
+    			</td>
+  			</tr>
+			</table>		
+		</form>
+
+
+	</section>
+
+
+
+
+</body>
+
+	
+</html>
