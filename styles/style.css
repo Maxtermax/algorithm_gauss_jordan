@@ -15,8 +15,8 @@ table{
 table,td,th{
 	border:1px solid #d3d3d3
 	}
-#section_tabla{
- font-family: 'Open Sans', sans-serif;
+#section_tabla {
+ 	font-family: 'Open Sans', sans-serif;
 	margin:50px 30px;
 	width:100%;
 	height:300px;
@@ -160,7 +160,11 @@ table,td,th{
 	width:100px;
 	height:20px;
 	padding:5px;
-	outline:none
+	outline:none;
+	-webkit-transition: all 0.5s;
+}
+.disabled {
+	background-color: red;
 }
 
 #section_tabla .entrada:hover{
@@ -217,8 +221,43 @@ table,td,th{
 	left:0px;
 	width:100%;
 	height:30px;
-
 }
+
+.graficar {
+  border: none;
+  background: #03306C;
+  color: #fff;
+  cursor: pointer;
+  text-align: top;
+  padding: 5px 0px;
+  margin-left: 30px;
+  width: 100px;
+  font-weight: 100;
+  outline: none;
+  -webkit-transition:all 0.5s;
+}
+.graficar:hover {
+	background-color:rgb(1, 24, 53);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

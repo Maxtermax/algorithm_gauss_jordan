@@ -4,18 +4,12 @@
   "description": "demo app of node-webkit",
   "version": "0.1.0",
   "window": {
-    "title": "Test",
-    "icon": "link.png",
+    "title": "Guss jordan",
+    "icon": "./icon/main.png",
     "toolbar":false,
     "frame": true,
-    "width": 1000,
-    "height": 500,
     "position": "center",
-    "maximize":true,
-    "width": 1000,
-    "height": 768,
-    "min_width": 500,
-    "min_height": 500
+    "maximize":true
   }
     
 }

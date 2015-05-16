@@ -1,6 +1,5 @@
 var  Matriz = function() {
 	var self = this 
-
 }
 
 var generate = function(i,j) {
@@ -14,7 +13,6 @@ var generate = function(i,j) {
 	}//end rows
 	return res  }//end generate
 
-
 //GAUSS COMIENZA DESDE AQUI 
 var suma = function(a,b) {
 	var res = []
@@ -22,12 +20,14 @@ var suma = function(a,b) {
 		res.push(a[i]+b[i])
 	}
 	return res  }//end suma 
+
 var multiplicar = function(array,num) {
 	var res = []
 	for ( i in array) {
 		res.push(array[i]*num)
 	}
-	return res }//end multiplicar 
+	return res }//end multiplicar
+
 var divide = function(array,num) {
 	for (var i =0; i < array.length;i++) {
 		if(array[i] === 0) continue
@@ -41,20 +41,6 @@ var show = function(array) {
 		console.log(array[i])
 	}
 }
-
-
-function toFraction(x) {
-    var tolerance = 1.0E-6;
-    var h1=1; var h2=0;
-    var k1=0; var k2=1;
-    var b = x;
-    do {
-        var a = Math.floor(b);
-        var aux = h1; h1 = a*h1+h2; h2 = aux;
-        aux = k1; k1 = a*k1+k2; k2 = aux;
-        b = 1/(b-a);
-    } while (Math.abs(x-h1/k1) > x*tolerance);
-    return h1+"/"+k1; }//end float2rat  
 
 var intercambiar = function(array,index,cb) {
 	/*
@@ -88,7 +74,7 @@ var resolveUno = function(row,index,cb) {
 	que llega por parametro y los intercambia 
 	*/
 	var pivot = row[index]
-	if( pivot != 1 && pivot != -1 ) intercambiar(row,index,function(err,res) {
+	if( pivot != 1 ) intercambiar(row,index,function(err,res) {
 		//el error en caso de que todos los numeros de esa fila sean ceros 
 		if(err) return cb(true)
 		row = res 
@@ -100,14 +86,15 @@ var resolveUno = function(row,index,cb) {
 	})
 	return row	}//end resolve uno
 
-var resolveCero = function(array,index,cb) {
+var resolveCero = function(array,index) {
 	var pivot = array[index]
 	for (var i = 0; i < array.length; i++) {
 		if(i === index) continue
-		var current = array[i][index]//item actual 
+		var current = array[i][index]//item actual
 		var mult =  multiplicar(pivot,-current)//fila pivote multiplicada	
 		array[i] = suma(array[i],mult)
-	}	 }//end resolve cero 
+	} }//end resolve cero 
+
 
 var gauss = function (g,cb) {
 	var self = this 
@@ -116,7 +103,6 @@ var gauss = function (g,cb) {
 			if(err) return cb(true)				
 			g[i] = res
 		}) 
-
 		/*
 		resolveUno
 			resuelve el uno de la diagonal principa correspondiente 
@@ -142,7 +128,6 @@ var gauss = function (g,cb) {
 
 Matriz.prototype.gauss = gauss
 Matriz.prototype.generate = generate
-Matriz.prototype.toFraction = toFraction
 
 
 

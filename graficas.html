@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Grafics">
+<head>
+	<meta charset="UTF-8">
+	<title>Grafica</title>
+	<script src="./lib/angular.min.js"></script>
+
+	<script src="./scripts/grafic.js"></script>
+
+
+	<link rel="stylesheet" href="./styles/grafics.css">
+
+</head>
+
+<body ng-controller="board">
+	<header class="footer" >	
+		<nav>
+			<ul>
+				<li>
+					<select class="dimencion" name="dimencion" ng-change="update(dimencion)" ng-model="dimencion" >	
+						<option value="400" >
+							400x400
+						</option>
+						<option value="600">
+							600x600
+						</option>
+					</select>
+				</li>
+				<li>
+					<div class="mask">
+						<input type="file" class="save" nwsaveas accept="image/png" />
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<canvas id="lienzo" width="400" height="400"></canvas>
+	<script src="./scripts/graficar.js"></script>
+	
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,13 +1,4 @@
 var matriz = new Matriz()
-/*
-var ngui = require('nw.gui')
-var nwin = ngui.Window.get()
-
-window.onload = function() {
-  nwin.show()
-  nwin.maximize()
-}
-*/
 
 var Input = function($scope) {
 	var longitud = $scope.dimencion = 2 
@@ -41,6 +32,22 @@ var Input = function($scope) {
 		$scope.showX = i 
 		$scope.showY = j
 	}//end showPos
+
+	/*Graficar*/
+	$scope.graficar = function() {
+		open_grafics({
+			matriz: matriz,
+			variables:$scope.matriz 
+		})
+	}//End graficar 
+
+
+
+
+
+
+
+
 
 
 
