@@ -48,7 +48,7 @@ file.append(new gui.MenuItem({
     }
 }))
  
-mb.append(new gui.MenuItem({ label: 'File', submenu: file}));
+mb.append(new gui.MenuItem({ label: 'Archivo', submenu: file}));
 
 gui.Window.get().menu = mb;
 

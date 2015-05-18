@@ -16,7 +16,7 @@ win.height = 460
 
 var graficar = function(ctx,width,height) {
 	var cor = grafics.subs($.variables)
-	grafics.grid(ctx,width,height,space,'#ccc')
+	grafics.grid(ctx,width,height,space,'#eee')
 	for(var i = 0;i< cor.length; i++) {
 		var x = cor[i][0]
 		var y = cor[i][1]

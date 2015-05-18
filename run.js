@@ -8,11 +8,14 @@ var files = [
 	'graficas.html',
 	'styles/style.css',
 	'styles/grafics.css',
+	'styles/instrucciones.css',
 	'scripts/array.js',
 	'scripts/grafic.js',
 	'scripts/graficar.js',
 	'scripts/windows.js',
-	'scripts/main.js'
+	'scripts/main.js',
+	'scripts/instruccion.js'
+
 ]
 console.log('Watching *.*',new Date());
 

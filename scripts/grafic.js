@@ -5,22 +5,53 @@ var grid = function (ctx,width,height,space,color) {
 	for (var i = 1; i < width/space; i++) {	
 		ctx.beginPath()
 		ctx.strokeStyle = color
-		if(i == (width/space)/2 ) ctx.strokeStyle = 'black'
+		if(i == (width/space)/2 ) ctx.strokeStyle = '#004196'
 		ctx.moveTo(0,i*space)
 		ctx.lineTo(width,i*space)
 		ctx.stroke()
 		ctx.closePath()
+
+		ctx.beginPath()
+		ctx.strokeStyle = '#004196'
+		ctx.moveTo( (width/2)-5 ,i*space)
+		ctx.lineTo( (width/2)+5 ,i*space)
+		ctx.stroke()
+		ctx.closePath()		
+		//draw indice 
+		ctx.beginPath()
+		ctx.font="10px Arial"
+		ctx.fillText(String( ((width/space)/2)-i  ),(width/2)+10,i*space )		
+		ctx.fill()
+		ctx.closePath()
+
 	}//rows 
+
+
 
 	for (var j = 1; j < height/space; j++) {	
 		ctx.beginPath()
 		ctx.strokeStyle = color
-		if(j == (height/space)/2 ) ctx.strokeStyle = 'black'
+		if(j == (height/space)/2 ) ctx.strokeStyle = '#004196'
 		ctx.moveTo(j*space,0)
 		ctx.lineTo(j*space,height)
 		ctx.stroke()
 		ctx.closePath()
+
+		ctx.beginPath()
+		ctx.strokeStyle = '#004196'
+		ctx.moveTo(j*space, (height/2)-5 )
+		ctx.lineTo(j*space,(height/2)+5 )		
+		ctx.stroke()
+		ctx.closePath()
+		//draw indice 
+		ctx.beginPath()
+		ctx.font="10px Arial"
+		ctx.fillText( String( ((height/space)/2)-j ) ,j*space,(height/2)+15 )		
+		ctx.fill()
+		ctx.closePath()
+
 	}//colums  
+
 }//end grid
 
 var subs = function(array) {

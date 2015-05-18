@@ -4,7 +4,7 @@
   "description": "demo app of node-webkit",
   "version": "0.1.0",
   "window": {
-    "title": "Guss jordan",
+    "title": "Gauss jordan",
     "icon": "./icon/main.png",
     "toolbar":false,
     "frame": true,
