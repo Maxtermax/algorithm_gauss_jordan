@@ -11,7 +11,8 @@ var generate = function(i,j) {
 			res[rows].push(0)
 		}//end colums
 	}//end rows
-	return res  }//end generate
+	return res 
+}//end generate
 
 //GAUSS COMIENZA DESDE AQUI 
 var suma = function(a,b) {
@@ -19,21 +20,24 @@ var suma = function(a,b) {
 	for ( i in a) {
 		res.push(a[i]+b[i])
 	}
-	return res  }//end suma 
+	return res 
+}//end suma 
 
 var multiplicar = function(array,num) {
 	var res = []
 	for ( i in array) {
 		res.push(array[i]*num)
 	}
-	return res }//end multiplicar
+	return res 
+}//end multiplicar
 
 var divide = function(array,num) {
 	for (var i =0; i < array.length;i++) {
 		if(array[i] === 0) continue
 		array[i] = array[i]/num
 	}
-	return array  }// divide 
+	return array 
+}// divide 
 
 
 var show = function(array) {
@@ -84,7 +88,8 @@ var resolveUno = function(row,index,cb) {
 		requerida es decir el index que llego por parametro 
 		*/
 	})
-	return row	}//end resolve uno
+	return row
+}//end resolve uno
 
 var resolveCero = function(array,index) {
 	var pivot = array[index]
@@ -93,7 +98,8 @@ var resolveCero = function(array,index) {
 		var current = array[i][index]//item actual
 		var mult =  multiplicar(pivot,-current)//fila pivote multiplicada	
 		array[i] = suma(array[i],mult)
-	} }//end resolve cero 
+	} 
+}//end resolve cero 
 
 
 var gauss = function (g,cb) {
@@ -125,31 +131,5 @@ var gauss = function (g,cb) {
 	return g
 }//end gauss 
 
-
 Matriz.prototype.gauss = gauss
 Matriz.prototype.generate = generate
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
